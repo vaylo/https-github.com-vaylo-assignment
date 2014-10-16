@@ -4,7 +4,7 @@ Requirement: node.js is required to be installed first before running this appli
 			 node js can be download from http://nodejs.org/
 
 1. Unzip the file to a location
-2. Change directory to the unzipped location(ex: c:\<pathtounzipdirectory>\telmate)
+2. Change directory to the unzipped location(ex: c:\<pathtounzipdirectory>)
 3. Open a window prompt and run:
 		node sever.js
 		or 
