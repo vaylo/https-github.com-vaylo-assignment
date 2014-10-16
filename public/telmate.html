@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="telmateApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Telmate Assignment by Vay Lo</title>
+ 	<link rel="stylesheet" type="text/css" href="css/telmate.css" />
+	
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+	<script type="text/javascript" src="javascripts/telmateApp.js"></script>
+
+	<script>
+		function changeColor(b, val) {
+			document.getElementById(b).style.backgroundColor = val;
+		}
+	</script>
+	
+</head>
+<body bgcolor="white" ng-controller="appController">
+	<div class=center>
+	    <header id="header">Notify</header>
+	    <div id="main-column" class="hbox"> 
+	    	 <div id="message-column" class="vbox">    	
+	    	 	<div ng-controller="messageController">
+	    	  
+		    	 	<div style="padding:5px">	
+			    	 	<form>
+			    	 		<input type="text" maxlength="140" size="50" ng-model="message"><button ng-click="post(message)">POST</button>
+			    	 	</form>
+		    	 	</div>
+	    	 	
+		    	 	<div id="buttons" ng-model="messageType">
+						<div class="btn" id="all"  ng-click="setMessageType()">ALL</div>
+						<div class="btn" id="public"  ng-click="setMessageType('public')">PUBLIC</div>
+						<div class="btn" id="private"  ng-click="setMessageType('private')">PRIVATE</div>
+					</div>
+					<div class=line></div>
+					
+						<section class="messages" ng-repeat="msg in messages | filter:{type:messageType }">
+							<table>
+								<tr><td valign="top">
+									<div class="post-message">
+										<img ng-src="{{msg.picture}}" alt="inmage picture" width="97" height="90" />
+									</div>
+								</td><td>
+									<div class="message"  ng-mouseenter="hin(msg)" ng-mouseleave="hout(msg)">
+										<div class="post">{{msg.message}}</div>	
+										<div style="border:0px solid; position:relative;width:350px; height:20px" ng-show="msg.show">Post {{msg.date}} {{msg.name}} <a href="#" ng-click="reply(msg)">reply</a>&nbsp;<a href="#" ng-click="renotify(msg)">renotify</a></div>
+									</div>
+								</td></tr>
+							</table>
+						</section>
+					</div> 
+				
+	    	 	</div>
+	    	 <div style="border:1px solid; width:1px; height:auto; background-color:gray;">&nbsp;</div>
+	    	 <div id="image-column">
+	    	 	<div ng-controller="sliderController" ng-model="pictures">
+	    	 		<slider images="images"/>
+	    	 	</div>
+	    	 </div>
+    	 </div>
+    </div>
+</body>
+</html>
+

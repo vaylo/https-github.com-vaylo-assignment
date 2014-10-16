@@ -1,0 +1,37 @@
+[
+	{
+		"inmateId": "ced123",
+		"message": "this is private message posted by Mike",
+		"date":"10 mins ago",
+		"name":"Mike"	,
+		"picture": "images/inmate.png",		
+		"type":"private"	
+	},
+	{
+		"inmateId": "abc123",
+		"message": "this is public message posted by Joe",
+		"date":"45 mins ago",
+		"name":"Joe",
+		"picture": "images/inmate.png",		
+		"type":"public"
+	},
+	{
+		"inmateId": "123",
+		"message": "this is public message posted by Lisa",
+		"date":"20 hours ago",
+		"name":"Lisa",
+		"picture": "images/inmate.png",
+		"type":"public"
+		
+	},
+	{
+		"inmateId": "ase123",
+		"message": "this is public message posted by Lisa",
+		"date":"10/12/2014",
+		"name":"Lisa",
+		"picture": "images/inmate.png",
+		"type":"public"
+		
+	}
+]
+	
